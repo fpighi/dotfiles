@@ -1,0 +1,9 @@
+[user]
+	name = Francesco Pighi
+	email = francesco.pighi@plentific.com
+[push]
+	default = simple
+[alias]
+	st = status
+	ci = commit
+	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
