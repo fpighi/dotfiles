@@ -7,3 +7,6 @@
 	st = status
 	ci = commit
 	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	logtree = log --graph --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --all
