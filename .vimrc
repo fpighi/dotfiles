@@ -11,11 +11,18 @@ Plugin 'gmarik/Vundle.vim'
 
 " Navigation
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 " languages
 
 " Python
 Plugin 'nvie/vim-flake8' 
+let g:flake8_show_quickfix=0  " don't show flake8 quick fix window
+let g:flake8_show_in_gutter = 1  " show flake8 W and E in gutter
+let g:flake8_show_in_file = 1  " show flake8 W and E inline
 
 " others
 Plugin 'ekalinin/Dockerfile.vim'
@@ -24,6 +31,7 @@ Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
 Plugin 'VimClojure'
+Plugin 'elixir-lang/vim-elixir'
 
 " theme
 Plugin 'sickill/vim-monokai'
@@ -60,5 +68,8 @@ let NERDTreeHighlightCursorline=1
 " file specific rules
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
-autocmd Filetype yaml setlocal ts=4 sw=4 sts=0 noexpandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
+
+" enable flake8 on saving a python file
+autocmd BufWritePost *.py call Flake8()
