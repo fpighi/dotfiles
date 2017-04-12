@@ -119,3 +119,17 @@ fi
 source ~/.bash-git-prompt/gitprompt.sh
 
 export EDITOR=vim
+
+# GO STUFF
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
+# Binaries installed by pip
+export PATH=$PATH:$HOME/.local/bin/
+
+# virtualenvwrapper
+export WORKON_HOME=~/.envs
+source ~/.local/bin/virtualenvwrapper.sh
+
+# haskell stack autocompletion
+eval "$(stack --bash-completion-script stack)"
